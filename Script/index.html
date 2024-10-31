@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cipher Hub</title>
+  <link rel="stylesheet" href="cipher-hub.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Cipher Hub</h1>
+    <div class="input-section">
+      <textarea id="messageInput" placeholder="Type your secret message..."></textarea>
+      
+      <label for="cipherSelect">Select Cipher:</label>
+      <select id="cipherSelect">
+        <option value="caesar">Caesar Cipher</option>
+        <option value="symbol">Symbol Cipher</option>
+        <option value="reverse">Reverse Cipher</option>
+        <option value="binary">Binary Code</option>
+        <option value="tap">Tap Code</option>
+        <option value="morse">Morse Code</option>
+        <option value="super">Super Cipher</option>
+    </select>
+    
+      <div class="caesar-section">
+        <label for="caesarShift">Caesar Shift (1-26):</label>
+        <select id="caesarShift">
+            <script>
+                for (let i = 1; i <= 26; i++) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                }
+            </script>
+        </select>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button id="encodeButton">Encode</button>
+      <button id="decodeButton">Decode</button>
+    </div>
+    
+    <h2>Result:</h2>
+    <textarea id="resultOutput" readonly></textarea>
+    
+    <div class="spy-log">
+      <h3>Activity Log:</h3>
+      <ul id="activityLog"></ul>
+    </div>
+  </div>
+  
+  <script type="module" src="encryption.js"></script>
+  <script type="module" src="page.js"></script>
+</body>
+</html>
